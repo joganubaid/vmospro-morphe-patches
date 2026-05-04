@@ -1,0 +1,14 @@
+{
+  "name": "vmospro-morphe-patches",
+  "version": "1.0.0",
+  "description": "Morphe patches for VMOS Pro",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["morphe", "patches", "vmos", "android"],
+  "author": "joganubaid",
+  "license": "GPL-3.0",
+  "devDependencies": {},
+  "dependencies": {}
+}
