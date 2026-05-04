@@ -6,17 +6,16 @@ import app.morphe.patcher.patch.PatchWithFingerprint
 import app.morphe.patcher.patch.Relevance
 
 @PatchWithFingerprint(
-    fingerprint = "Lcom/vmos/pro/model/VipModel;->isVip()Z",
+    fingerprint = "Lcom/vmos/pro/account/AccountHelper;->isVipVM()Z",
     compatibility = Constants.COMPATIBILITY,
-    description = "Always return true for isVip check",
+    description = "Always return true for isVipVM check - unlocks VIP VM features",
     relevance = Relevance.HIGHEST
 )
-class VipUnlockPatch {
+class VipVMPatch {
     fun patch(): PatchResult {
-        // Override isVip() to always return true
         return modifyMethod {
             """
-            .method public isVip()Z
+            .method public isVipVM()Z
                .registers 2
                const/4 v0, 0x1
                return v0
@@ -27,17 +26,16 @@ class VipUnlockPatch {
 }
 
 @PatchWithFingerprint(
-    fingerprint = "Lcom/vmos/pro/model/VipModel;->isForeverVip()Z",
+    fingerprint = "Lcom/vmos/mvplibrary/BaseAct;->isVipAct()Z",
     compatibility = Constants.COMPATIBILITY,
-    description = "Always return true for isForeverVip check",
+    description = "Always return true for isVipAct check - unlocks VIP activity features",
     relevance = Relevance.HIGHEST
 )
-class ForeverVipPatch {
+class VipActPatch {
     fun patch(): PatchResult {
-        // Override isForeverVip() to always return true
         return modifyMethod {
             """
-            .method public isForeverVip()Z
+            .method public isVipAct()Z
                .registers 2
                const/4 v0, 0x1
                return v0
@@ -48,20 +46,19 @@ class ForeverVipPatch {
 }
 
 @PatchWithFingerprint(
-    fingerprint = "Lcom/vmos/pro/utils/VipCheck;->checkVip()Z",
+    fingerprint = "Lcom/vmos/pro/bean/UserBean;->getVipGradeType()Ljava/lang/String;",
     compatibility = Constants.COMPATIBILITY,
-    description = "Bypass VIP check in VipCheck",
+    description = "Return VIP grade type to unlock VIP features",
     relevance = Relevance.HIGHEST
 )
-class VipCheckBypassPatch {
+class VipGradePatch {
     fun patch(): PatchResult {
-        // Override checkVip() to always return true
         return modifyMethod {
             """
-            .method public checkVip()Z
+            .method public getVipGradeType()Ljava/lang/String;
                .registers 2
-               const/4 v0, 0x1
-               return v0
+               const-string v0, "svip"
+               return-object v0
             .end method
             """.trimIndent()
         }.patch()
