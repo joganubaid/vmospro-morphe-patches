@@ -1,0 +1,23 @@
+patches/src/main/kotlin/com/vmos/pro/patches/VipUnlockPatch.kt
+  65a144f6e5bcd5d9 4,6,11,16,18-21,35,40,42-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "828bb52838a8c457659a983f1c753ed8eca8ac8e",
+  "prompts": {
+    "65a144f6e5bcd5d9": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_20d47bda5ffe30wRil3roM41AA",
+        "model": "unknown"
+      },
+      "human_author": "joganubaid",
+      "messages": [],
+      "total_additions": 13,
+      "total_deletions": 26,
+      "accepted_lines": 13,
+      "overriden_lines": 0
+    }
+  }
+}
