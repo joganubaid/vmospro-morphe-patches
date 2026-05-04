@@ -1,0 +1,23 @@
+.github/workflows/release.yml
+  65a144f6e5bcd5d9 34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "d7186e70a505b612ac1174b07db61ecc6a2addab",
+  "prompts": {
+    "65a144f6e5bcd5d9": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_20d47bda5ffe30wRil3roM41AA",
+        "model": "unknown"
+      },
+      "human_author": "joganubaid",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
